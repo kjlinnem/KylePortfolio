@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Budget 101</title>
+        <meta name="description" content="A simple approach to planning your budget.">
+        <link rel="stylesheet" href="main.css">
+        <script src="budget_JS.js"></script>
+    </head>
+   
+    <body  font-family="Optima">
+        <header>
+            <h1>Family Budget</h1>
+
+        </header>
+        <nav class="sidenav">
+            <a href="budget_taxes.html">Taxes</a> 
+            <a href="budget_charity.html">Charity</a> 
+            <a href="budget_savings.html">Savings</a> 
+            <a href="budget_housing.html">Housing</a>
+            <a href="budget_transportation.html">Transportation</a>
+            <a href="budget_food.html">Food and Beverage</a>
+            <a href="budget_clothing.html">Clothing</a>
+            <a href="budget_furnishings.html">Furnishings</a> 
+            <a href="budget_personal.html">Personal Care & Cash</a> 
+            <a href="budget_medical.html">Medical & Dental & Vision</a>
+            <a href="budget_insurance.html">Insurance</a>
+            <a href="budget_education.html">Education</a> 
+            <a href="budget_payments.html">Installment Payments</a> 
+            <a href="budget_entertainment.html">Entertainment</a> 
+            <a href="budget_vacation.html">Vacation</a>
+            <a href="budget_misc.html">Miscellaneous</a> 
+        </nav>
+       
+        <div class="column budgetTable">
+            <form>
+                Enter Annual Salary:
+           
+                <input id="salary" type="text" placeholder="Salary"/>
+                <input type="button" onclick=calcExpense(this) value=Calculate>
+
+            </form>
+            <table id="budget" onload=calcTotal()>
+                <caption><h3>Financial Breakdown</h3></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Percentage</th>
+                        <th scope="col">Annual Expense</th>
+                        <th scope="col">Monthly Expense</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Taxes</td>
+                        <td>25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Medical & Dental & Vision</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Insurance</td>
+                        <td>13</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Savings</td>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Housing</td>
+                        <td>15</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Transportation</td>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Food and Beverage </td>
+                        <td>8</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Clothing</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Furnishings</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Personal Care & Cash</td>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Education</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Installment Payments</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Entertainment, Dining, Gifts </td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Vacation </td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Charity</td>
+                        <td>10</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous </td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!-- Original percentage per item
+                        <li>Taxes 25%  </li>
+                        <li>Charity 10%   </li>
+                        <li>Savings 5-20%   </li>
+                        <li>Housing 15-20%  </li>
+                        <li>Transportation 5-7%  </li>
+                        <li>Food and Beverage 5-9%  </li>
+                        <li>Clothing 2-4%  </li>
+                        <li>Furnishings 1-2%  </li>
+                        <li>Personal Care & Cash 2-4%  </li>
+                        <li>Medical & Dental & Vision 3-5%  </li>
+                        <li>Insurance 10-12%  </li>
+                        <li>Education & Self Improvement 1-2%   </li>
+                        <li>Installment Payments 0%  </li>
+                        <li>Entertainment, Dining, Gifts 3-5%  </li>
+                        <li>Vacation 3-5%  </li>
+                        <li>Miscellaneous 1-2%  </li>
+                    -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="column adSpace" >
+            <h3>Ad Space here.</h3>
+        </div>
+
+        <script>calcTotal();</script>
+
+        <footer>
+            <h2> This is my footer</h2>
+        </footer>
+       
+    </body>
+</html>
